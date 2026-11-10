@@ -76,10 +76,10 @@
     <!-- Right: Connection Status Badge & Utility Controls -->
     <div class="d-flex align-items-center gap-2">
       <!-- Database Connection Status Badge (Clean, non-duplicated) -->
-      <div id="top-status-badge" class="status-badge-pill" data-bs-toggle="modal" data-bs-target="#mysqlConnectModal" style="cursor: pointer;" title="Configure Database Connection">
+      <button type="button" id="top-status-badge" class="status-badge-pill border-0" data-bs-toggle="modal" data-bs-target="#mysqlConnectModal" style="cursor: pointer;" title="Configure Database Connection">
         <span id="db-status-dot" class="pulse-indicator bg-cyan-400"></span>
         <span id="db-status-text">Ready</span>
-      </div>
+      </button>
 
       <!-- Theme Mode Toggle -->
       <button class="btn btn-icon-round" id="btn-theme-toggle" title="Toggle Theme (Dark Active)">
@@ -87,7 +87,7 @@
       </button>
 
       <!-- Settings Cog Button -->
-      <button class="btn btn-icon-round" data-bs-toggle="modal" data-bs-target="#settingsModal" title="AI Provider & Model Settings">
+      <button class="btn btn-icon-round" id="btn-settings" data-bs-toggle="modal" data-bs-target="#settingsModal" title="AI Provider & Model Settings">
         <i class="bi bi-gear-fill"></i>
       </button>
 
@@ -105,12 +105,12 @@
   <div class="app-layout">
 
     <!-- ============================================================ -->
-    <!-- LEFT NAVIGATION SIDEBAR (5 ESSENTIAL ITEMS ONLY) -->
+    <!-- LEFT NAVIGATION SIDEBAR (4 ESSENTIAL ITEMS) -->
     <!-- ============================================================ -->
     <aside class="left-sidebar">
       <nav class="sidebar-nav">
         <!-- 1. AI Query Copilot -->
-        <button class="sidebar-item active" id="nav-btn-copilot" data-tab="tab-query">
+        <button class="sidebar-item active" id="tab-query-btn" data-tab="tab-query">
           <i class="bi bi-stars"></i>
           <span>AI Query Copilot</span>
         </button>
@@ -347,6 +347,9 @@
                 </div>
                 <button id="btn-export-csv" class="btn btn-editor-action" title="Export as CSV">
                   <i class="bi bi-file-earmark-spreadsheet me-1 text-success-green"></i> CSV
+                </button>
+                <button id="btn-export-json" class="btn btn-editor-action" title="Export as JSON">
+                  <i class="bi bi-filetype-json me-1 text-warning"></i> JSON
                 </button>
                 <button id="btn-print-report" class="btn btn-editor-action" title="Print Results">
                   <i class="bi bi-printer me-1 text-blue"></i> Print
